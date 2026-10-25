@@ -1,0 +1,22 @@
+# 每次推送或發 Pull Request 時，自動檢查程式語法與劇情圖
+name: 劇情檢查
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 檢查 JavaScript 語法
+        run: for f in js/*.js tools/*.js; do node --check "$f"; done
+
+      - name: 檢查劇情圖（所有路線、三選一、7 種結局）
+        run: node tools/validate.js

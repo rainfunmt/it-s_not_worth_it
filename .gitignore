@@ -1,0 +1,14 @@
+# Claude Code 開發時的本機設定
+.claude/
+
+# 作業系統產生的檔案
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 編輯器
+.vscode/
+.idea/
+
+# Node.js（目前沒有用到套件，預防之後加入）
+node_modules/

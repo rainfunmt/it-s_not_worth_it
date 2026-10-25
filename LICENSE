@@ -1,0 +1,38 @@
+本專案採用雙重授權 / This project is dual-licensed:
+
+1. 程式碼（.html、.css、.js 檔案）：MIT License
+   Source code (.html, .css, .js files): MIT License
+
+2. 劇情文字、角色設定與插畫設計：CC BY-NC 4.0
+   （姓名標示─非商業性，https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hant）
+   Story text, characters and illustration design: CC BY-NC 4.0
+   (https://creativecommons.org/licenses/by-nc/4.0/)
+
+   js/cases.js 中的真實案例為新聞與官方資料的摘要，版權屬於原始來源，
+   不在上述授權範圍內；引用時請連回原始出處。
+   The real-case summaries in js/cases.js are based on the cited news and
+   government sources, which remain the property of their original owners.
+
+-------------------------------------------------------------------------------
+
+MIT License
+
+Copyright (c) 2026 rainfunmt
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

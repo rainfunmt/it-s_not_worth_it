@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>星之泉 · It's Not Worth It</title>
+  <meta name="description" content="22世紀20歲年輕人的尋寶旅程：面對真實世界的誘惑，你會怎麼選？">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=11">
+</head>
+<body data-theme="dream">
+  <div id="bg-deco" aria-hidden="true"></div>
+
+  <!-- 標題畫面 -->
+  <section id="screen-title" class="screen active">
+    <div class="title-card blob">
+      <div class="title-kicker">2125 · 二十歲的傳說</div>
+      <h1 class="game-title">星之泉</h1>
+      <div class="title-sub">It's Not Worth It</div>
+      <div id="title-art" class="title-art"></div>
+      <div class="menu">
+        <button class="btn primary" id="btn-new">開始新的旅程</button>
+        <button class="btn" id="btn-continue" hidden>繼續旅程</button>
+        <button class="btn" id="btn-gallery">結局圖鑑</button>
+        <button class="btn" id="btn-help">求助資源</button>
+      </div>
+      <p class="title-note">本遊戲的誘惑情節取材自真實案例，結局附有案例來源與求助管道。</p>
+      <p class="title-note tribute">故事靈感：保羅・科爾賀（本名 Paulo Coelho de Souza）《牧羊少年奇幻之旅》</p>
+    </div>
+  </section>
+
+  <!-- 角色建立 -->
+  <section id="screen-create" class="screen">
+    <div class="panel blob create-panel">
+      <h2>你是誰？</h2>
+      <div class="gender-pick">
+        <button class="gender-card" data-gender="f" aria-pressed="false">
+          <div class="gender-art" id="art-f"></div><span>女生</span>
+        </button>
+        <button class="gender-card" data-gender="m" aria-pressed="false">
+          <div class="gender-art" id="art-m"></div><span>男生</span>
+        </button>
+      </div>
+      <label class="name-field">
+        <span>名字</span>
+        <input id="input-name" type="text" maxlength="8" placeholder="小星" autocomplete="off">
+      </label>
+      <div class="row">
+        <button class="btn" data-goto="title">返回</button>
+        <button class="btn primary" id="btn-start" disabled>出發！</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 遊戲畫面 -->
+  <section id="screen-game" class="screen">
+    <header class="hud">
+      <div class="hud-chapter" id="hud-chapter">序章</div>
+      <div class="hud-stats" id="hud-stats"></div>
+      <div class="hud-tools">
+        <button class="icon-btn" id="btn-stone" title="徵兆石：揭露一個選項的隱藏風險">🔮<span id="stone-count">2</span></button>
+        <button class="icon-btn" id="btn-mute" title="音樂開關">🔊</button>
+        <button class="icon-btn" id="btn-menu" title="選單">☰</button>
+      </div>
+    </header>
+    <div class="stage">
+      <div class="scene-frame blob" id="scene"></div>
+      <div class="dialog blob" id="dialog" tabindex="0" aria-live="polite">
+        <div class="speaker" id="speaker"></div>
+        <div class="text" id="text"></div>
+        <div class="advance-hint" id="advance-hint">▼</div>
+      </div>
+      <div class="choices" id="choices"></div>
+    </div>
+  </section>
+
+  <!-- 結局 -->
+  <section id="screen-ending" class="screen">
+    <div class="ending-wrap">
+      <div class="scene-frame blob" id="ending-scene"></div>
+      <div class="panel blob ending-panel">
+        <div class="ending-badge" id="ending-badge"></div>
+        <h2 id="ending-title"></h2>
+        <div id="ending-text" class="ending-text"></div>
+        <div id="ending-cases"></div>
+        <div class="row wrap">
+          <button class="btn primary" id="btn-rewind">回到上一個轉折點</button>
+          <button class="btn" id="btn-path">看我的選擇路徑</button>
+          <button class="btn" data-goto="title">回到標題</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 圖鑑 -->
+  <section id="screen-gallery" class="screen">
+    <div class="panel blob wide">
+      <h2>結局圖鑑 <small id="gallery-count"></small></h2>
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <h3>現實小卡</h3>
+      <div class="fact-list" id="fact-list"></div>
+      <div class="row"><button class="btn" data-goto="title">返回</button></div>
+    </div>
+  </section>
+
+  <!-- 路徑圖 -->
+  <section id="screen-path" class="screen">
+    <div class="panel blob wide">
+      <h2>你的選擇路徑</h2>
+      <p class="muted">每一欄是一個轉折點，亮起來的是你的選擇。顏色：<span class="tag growth">成長</span> <span class="tag gray">灰色</span> <span class="tag danger">危險</span> <span class="tag dawn">回頭</span></p>
+      <div class="path-scroll"><div id="path-map"></div></div>
+      <p class="muted swipe-hint">← 左右滑動看完整路徑 →</p>
+      <div class="row"><button class="btn" id="btn-path-back">返回</button></div>
+    </div>
+  </section>
+
+  <!-- 求助資源 -->
+  <section id="screen-help" class="screen">
+    <div class="panel blob wide">
+      <h2>需要幫忙的時候</h2>
+      <div id="help-list"></div>
+      <div class="row"><button class="btn" data-goto="title">返回</button></div>
+    </div>
+  </section>
+
+  <!-- 彈出視窗：現實小卡、選單 -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card blob" role="dialog" aria-modal="true">
+      <div id="modal-body"></div>
+      <div class="row" id="modal-actions"></div>
+    </div>
+  </div>
+
+  <script src="js/cases.js?v=11"></script>
+  <script src="js/story.js?v=11"></script>
+  <script src="js/scenes.js?v=11"></script>
+  <script src="js/audio.js?v=11"></script>
+  <script src="js/state.js?v=11"></script>
+  <script src="js/engine.js?v=11"></script>
+  <script src="js/ui.js?v=11"></script>
+</body>
+</html>
