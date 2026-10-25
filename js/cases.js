@@ -48,7 +48,7 @@ window.CASES = {
       ],
       sources: [
         ['newtalk：165最新統計，2025-08-11', 'https://newtalk.tw/news/view/2025-08-11/987098'],
-        ['聯合新聞網：詐騙最新統計', 'https://udn.com/news/story/124490/8948666']
+        ['內政部警政署 165打詐儀錶板（官方統計）', 'https://165dashboard.tw/']
       ]
     },
     overseas: {

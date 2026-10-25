@@ -5,6 +5,10 @@ on:
   push:
   pull_request:
 
+# 只需要讀取程式碼，不給寫入權限
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
