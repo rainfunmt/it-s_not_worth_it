@@ -1,6 +1,11 @@
 # Claude Code 開發時的本機設定
 .claude/
 
+# 環境變數（密鑰）：目前沒有用到，預防之後加入
+.env
+.env.*
+!.env.example
+
 # 作業系統產生的檔案
 .DS_Store
 Thumbs.db
